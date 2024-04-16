@@ -111,3 +111,22 @@ Por que essa operação:
 5. Então vê que, o event loop, vai ser responável por tirar as coisas da fila, e jogar na pilha para ser executado, enquanto ele é executado, ele é gerenciado pela a thread pool, que é um conjunto de várias threads, interno do C++, para poder processar as coisas de forma não bloqueante. 
 
 **Por isso que tem várias requisições sendo recebidas, quase que paralelamente, e vai processando de forma muito mais performática, com todo o gerenciamento sendo feito pelos componentes internos do Node.js.**
+
+
+## Alguns dos assuntos estudados no Node.js, nessa pasta
+
+* [Módulos no node.js](modulos/)
+* [Lidando com caminhos usando "path"](caminhos_path/)
+* [Informações SO](informacoes_SO/)
+* [Streams e buffers](Streams_e_buffers/)
+* [Backend](Backend/)
+* [Manipulando arquivos](manipulando_arquivos/)
+* [Verbos e status HTTP](verbos_e_statusHTTP/)
+* [Servidor HTTP](servidor_HTTP/)
+* [Arquitetura MVC](Arquitetura_MVC/)
+* [Express](Express/)
+* [Chain of Responsability](Chain_Responsability/)
+* [Middlewares](Middlewares/)
+* [Concentrando rotas](concentrando_rotas/)
+* [Rotas POST, PUT, DELETE](Rotas_PUT_DELETE_POST/)
+* [Parâmetros nas rotas](parametros_rotas/)
