@@ -24,3 +24,4 @@ fs.writeFile("./arquivo.txt", content, "utf-8", (error) => {
 
     console.log("Arquivo criado com sucesso de forma assíncrona.")
 })
+
