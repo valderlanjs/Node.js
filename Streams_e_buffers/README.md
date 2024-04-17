@@ -6,7 +6,9 @@
 
 <h2>O que são Streams?</h2>
 
-<p>Streams são fluxos contínuos de dados que permitem o processamento incremental de informações. Em vez de carregar todo o conteúdo de uma vez na memória, as streams dividem os dados em pequenos pedaços, conhecidos como &quot;chunks&quot;, que são processados individualmente. Essa abordagem é ideal para otimizar operações em grandes volumes de dados, como arquivos de mídia, bancos de dados ou fluxos contínuos de informação, como conexões de rede.</p><h3>Principais características das Streams</h3>
+<p>Streams são fluxos contínuos de dados que permitem o processamento incremental de informações. Em vez de carregar todo o conteúdo de uma vez na memória, as streams dividem os dados em pequenos pedaços, conhecidos como &quot;chunks&quot;, que são processados individualmente. Essa abordagem é ideal para otimizar operações em grandes volumes de dados, como arquivos de mídia, bancos de dados ou fluxos contínuos de informação, como conexões de rede.</p>
+
+<h3>Principais características das Streams</h3>
 
 <ul>
     <li><strong>Processamento em chunks</strong>: As streams lidam com os dados em pequenos pedaços, permitindo um processamento mais eficiente e evitando sobrecarregar a memória.</li>
@@ -79,3 +81,5 @@
 <h2>Conclusão</h2>
 
 <p>Streams e buffers são conceitos fundamentais no Node.js, permitindo o processamento eficiente de grandes volumes de dados e a otimização do uso de recursos do sistema. Ao compreender esses conceitos e suas aplicações práticas, você estará preparado para desenvolver aplicações Node.js mais robustas e escaláveis.</p><p>Lembre-se de que, embora seja importante conhecer essas técnicas de otimização, não é necessário aplicá-las em todas as situações. A otimização prematura pode tornar o código desnecessariamente complexo. Utilizar streams e buffers quando houver uma necessidade real de lidar com grandes volumes de dados ou fluxos contínuos de informação.</p>
+
+<h3>Isso é apenas um conceito introdutório sobre o assunto, nada muito aprofundado.</h3>
