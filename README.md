@@ -127,5 +127,4 @@ Por que essa operação:
 * [Arquitetura MVC](Backend/Arquitetura_MVC/)
 * [Express](Backend/Express/)
 * [Entrada e saida de dados](Backend/Entrada-e-saida-de-dados/)
-* [Rotas POST, PUT, DELETE](Backend/Rotas_PUT_DELETE_POST/)
-* [Parâmetros nas rotas](Backend/parametros_rotas/)
+
