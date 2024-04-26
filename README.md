@@ -115,12 +115,13 @@ Por que essa operação:
 
 ## Alguns dos assuntos estudados no Node.js, nessa pasta
 
-* [Módulos no node.js](modulos/)
-* [Lidando com caminhos usando "path"](caminhos_path/)
-* [Informações SO](informacoes_SO/)
-* [Streams e buffers](Streams_e_buffers/)
+* [Módulos no node.js](Introdução/modulos/)
+* [Lidando com caminhos usando "path"](Introdução/caminhos_path/)
+* [Informações SO](Introdução/informacoes_SO/)
+* [Streams e buffers](Introdução/Streams_e_buffers/)
+* [Interação no terminal](Introdução/manipulando_arquivos/)
+* [Praticas](Introdução/Praticas/)
 * [Backend](Backend/)
-* [Manipulando arquivos](manipulando_arquivos/)
 * [Verbos e status HTTP](verbos_e_statusHTTP/)
 * [Servidor HTTP](servidor_HTTP/)
 * [Arquitetura MVC](Arquitetura_MVC/)
