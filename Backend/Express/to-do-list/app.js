@@ -1,11 +1,11 @@
 const express = require('express');
 const checklistRouter = require('./src/routes/checklist')
-
+require('./config/database');
 
 const app = express();
 app.use(express.json());
 
-app.use('/checklists',checklistRouter);
+app.use('/checklists', checklistRouter);
 /*
 // middleware para verificar se quando fez a chamada web existe algum json disponivel
 app.use(express.json());
