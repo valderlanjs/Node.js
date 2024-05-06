@@ -238,3 +238,160 @@
 
 <p>O EJS é responsável por processar o template + variáveis e retornar o HTML final, com todo o dinamismo que precisamos.</p>
 
+
+<h1>Utilizando Partials no EJS para Layouts mais Limpos</h1>
+
+<h2>Introdução</h2>
+
+<p>O EJS (Embedded JavaScript) é uma linguagem de modelagem muito popular para gerar HTML no lado do servidor. Ela permite incorporar código JavaScript diretamente no HTML para criar templates dinâmicos e reutilizáveis.</p>
+
+<p>Uma funcionalidade importante do EJS são os partials. Partials permitem que você extraia partes repetitivas do seu código, como headers, footers e menus de navegação, em arquivos separados e os inclua dinamicamente em outras páginas.</p>
+
+<p>Isso ajuda a manter o código mais limpo, organizado e fácil de manter. Neste ebook, vamos aprender como utilizar partials no EJS para criar layouts mais limpos e reutilizáveis para os nossos websites.</p>
+
+<h2>Criando Pastas e Arquivos Para os Partials</h2>
+
+<p>O primeiro passo é criar uma estrutura de arquivos adequada para guardar os nossos partials.</p>
+
+<p>Dentro da pasta <code>views</code> do nosso projeto, vamos criar uma subpasta chamada <code>layouts</code>. E dentro de <code>layouts</code> vamos criar três arquivos:</p>
+
+<ul>
+    <li><code>header.ejs</code> - para o código do header</li>
+    <li><code>footer.ejs</code> - para o código do footer</li>
+    <li><code>menu.ejs</code> - para o código do menu</li>
+</ul>
+
+<h2>Extraindo o Código Repetitivo</h2>
+
+<p>Agora dentro do nosso arquivo principal <code>index.ejs</code>, vamos extrair o código das partes que queremos tornar em partials e movê-las para os respectivos arquivos.</p><p>Por exemplo, vamos pegar todo o código do header:</p>
+
+<pre><code class="language-html">&lt;header&gt;  &lt;h1&gt;Meu Website&lt;/h1&gt;  &lt;nav&gt;    &lt;ul&gt;      &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;      &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;Sobre&lt;/a&gt;&lt;/li&gt;      &lt;li&gt;&lt;a href=&quot;/contact&quot;&gt;Contato&lt;/a&gt;&lt;/li&gt;      &lt;/ul&gt;  &lt;/nav&gt;&lt;/header&gt;</code></pre>
+
+<p>E colocar dentro de <code>header.ejs</code>. Fazemos o mesmo para o footer e menu.</p>
+
+<h2>Incluindo os Partials</h2>
+
+<p>Com os partials extraídos, agora precisamos incluí-los de volta no arquivo <code>index.ejs</code>.</p>
+
+<p>Para isso, usamos a sintaxe <code>&lt;%- include() %&gt;</code> do EJS:</p>
+
+<pre><code class="language-html">&lt;%- include('layouts/header') %&gt; &lt;h1&gt;Página Inicial&lt;/h1&gt;&lt;p&gt;Conteúdo da página&lt;/p&gt;&lt;%- include('layouts/footer') %&gt;</code></pre>
+
+<p>Isso vai inserir o conteúdo dos arquivos <code>header.ejs</code> e <code>footer.ejs</code> na página.</p>
+
+<p>Podemos também incluir o menu:</p>
+
+<pre><code class="language-html">&lt;%- include('layouts/header') %&gt;&lt;%- include('layouts/menu') %&gt;&lt;h1&gt;Página Inicial&lt;/h1&gt; &lt;p&gt;Conteúdo da página&lt;/p&gt;&lt;%- include('layouts/footer') %&gt;</code></pre>
+
+<p>Agora nosso layout está muito mais limpo, reutilizável e fácil de manter!</p><h2>Entendendo o Funcionamento</h2><p>O interessante dos partials é que eles não deixam a página estática. O EJS ainda monta todo o documento final no servidor antes de enviar a página renderizada para o navegador.</p>
+
+<p>Ele injeta os partials nos locais onde usamos a tag <code>include()</code>. Isso permite que tenhamos templates reutilizáveis e ao mesmo tempo páginas dinâmicas.</p>
+
+<p>Podemos também injetar variáveis e dados dentro dos partials, tornando-os ainda mais dinâmicos.</p><h2>Diferença Para Blocos</h2><p>Alguns templates como o Handlebars utilizam uma abordagem diferente, através dos blocos. Ao invés de incluir os partials, você define blocos com nomes específicos no seu layout:</p>
+
+<pre><code>{{{body}}}</code></pre>
+
+<p>E depois dentro das views, você implementa aquele bloco:</p>
+
+<pre><code>{{#block &quot;body&quot;}}   &lt;p&gt;Conteúdo da página aqui&lt;/p&gt; {{/block}}</code></pre>
+
+<p>Essa é uma outra forma válida para templates reutilizáveis, mas com o EJS conseguimos o mesmo efeito utilizando partials.</p>
+
+<h2>Injetando Dados Dinamicamente</h2>
+
+<p>Além de incluir trechos de HTML, também podemos injetar dados dinamicamente nas nossas views com EJS.</p>
+
+<p>Basta usar a tag <code>&lt;%= %&gt;</code>:</p>
+
+<pre><code class="language-html">&lt;header&gt;  &lt;h1&gt;&lt;%= title %&gt;&lt;/h1&gt;&lt;/header&gt;</code></pre>
+
+<p>Isso vai injetar o valor da variável JavaScript <code>title</code> naquele local.</p>
+
+<p>Podemos passar essas variáveis do nosso controller:</p>
+
+<pre><code class="language-js">res.render('index', {  title: 'Minha Página'  });</code></pre>
+
+<p>Assim tornamos o template ainda mais dinâmico!</p>
+
+
+<h1>Passando dados para um template EJS</h1>
+
+<h2>Introdução</h2>
+
+<p>Como passar dados para um template EJS (Embedded JavaScript) e utilizá-los dinamicamente para gerar HTML.</p>
+
+<p>O EJS é uma linguagem de modelagem que permite gerar HTML com JavaScript do lado do servidor. Ele funciona permitindo escrever código JavaScript entre tags especiais que serão executados no servidor antes de enviar a página HTML para o navegador.</p>
+
+<h2>Passando parâmetros para partials</h2>
+
+<p>No vídeo é apresentada uma situação onde existem várias páginas que incluem o header com um título fixo de &quot;Lista de Tarefas&quot;. O objetivo é fazer com que esse título mude dinamicamente de acordo com cada página.</p>
+
+<p>Para resolver esse problema, é utilizada a funcionalidade de partials do EJS, que permite extrair trechos de código HTML para arquivos separados que podem ser incluídos e reutilizados em várias páginas.</p><p>A solução apresentada consiste em:</p>
+
+<ol>
+    <li>Passar um objeto JavaScript com os dados desejados (no exemplo, um objeto com a propriedade &quot;title&quot;) na inclusão da partial header:</li>
+</ol>
+
+<pre><code>&lt;%- include('header', {title: 'Tudo List'}); %&gt;</code></pre>
+
+<ol start="2">
+    <li>No arquivo da partial header.ejs, utilizar a sintaxe do EJS para exibir esse valor dinamicamente:</li>
+</ol>
+
+<pre><code>&lt;title&gt;&lt;%= title %&gt;&lt;/title&gt; </code></pre>
+
+<p>Dessa forma, na inclusão da partial o título pode ser alterado passando um objeto diferente. Isso permite que o título seja personalizado em cada página, mantendo o header comum em um só lugar.</p>
+
+<h2>Funcionamento do EJS</h2>
+
+<p>O funcionamento básico do EJS consiste em:</p>
+
+<ul>
+    <li>Delimitar código JavaScript com tags especiais:
+        <ul>
+            <li><code>&lt;% // código JS %&gt;</code> - para executar</li>
+            <li><code>&lt;%= // código JS %&gt;</code> - para exibir o resultado</li>
+        </ul>
+    </li>
+    <li>O código dentro dessas tags é executado no servidor e pode acessar variáveis disponíveis no contexto</li>
+    <li>O resultado HTML é enviado para o navegador</li>
+</ul>
+
+<p>No caso do exemplo, quando a partial header.ejs é renderizada:</p>
+
+<ul>
+    <li>O objeto <code>{title: 'Tudo List'}</code> passado na inclusão está disponível como variáveis</li>
+    <li>A tag <code>&lt;%= title %&gt;</code> exibe o valor da propriedade <code>title</code> desse objeto</li>
+    <li>O HTML resultante é enviado com o título personalizado</li>
+</ul>
+
+<p>Dessa forma o EJS permite construir templates HTML de forma dinâmica.</p>
+
+<h2>Vantagens</h2>
+
+<p>Algumas vantagens de se utilizar o EJS:</p>
+
+<ul>
+    <li>Código mais limpo e fácil de dar manutenção que concatenação de strings</li>
+    <li>Permite reaproveitar trechos comuns com partials</li>
+    <li>Conteúdo dinâmico e adaptável em páginas estáticas</li>
+    <li>Integração com dados vindos do backend</li>
+    <li>Possibilidade de utilizar controle de fluxo, variáveis e outras funcionalidades do JavaScript</li>
+</ul>
+
+<h2>Boas práticas</h2>
+
+<p>Algumas boas práticas ao trabalhar com EJS:</p>
+
+<ul>
+    <li>Manter a lógica do JavaScript dentro das tags, e o HTML estático fora</li>
+    <li>Ter cuidado com vazamento de variáveis globais indesejadas</li>
+    <li>Sempre escapar saídas com <code>&lt;%- %&gt;</code> para prevenir ataques XSS</li>
+    <li>Utilizar partials para trechos comuns e componentes</li>
+    <li>Para grandes templates, quebrar em partials menores</li>
+    <li>Testar o HTML gerado para garantir que está sendo renderizado conforme o esperado</li>
+</ul>
+
+<h2>Conclusão</h2>
+
+<p>O EJS é uma ferramenta poderosa para gerar HTML no servidor de forma dinâmica. A possibilidade de utilizar JavaScript para montar as páginas permite criar templates reutilizáveis, com conteúdo específico por página.</p>
