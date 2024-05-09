@@ -24,6 +24,7 @@ app.set('view engine', 'ejs')
 app.use('/', rootRouter);
 app.use('/checklists', checklistRouter);
 app.use('/checklists', taskRouter.checklistDependent);
+app.use('/tasks', taskRouter.simple);
 
 /*
 // middleware para verificar se quando fez a chamada web existe algum json disponivel
