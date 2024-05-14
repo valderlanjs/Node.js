@@ -44,8 +44,12 @@
     <li><p>O Controller então chama a View apropriada, passando esses dados do Model pra serem renderizados na interface.</p></li>
     <li><p>A View é então apresentada com os dados ao usuário, permitindo uma nova interação.</p></li>
 </ol>
+<h2>Exemplo</h2>
+
+![Arquitetura MVC](https://i.stack.imgur.com/Beh3a.png)
 
 <p>Portanto, o Controller faz a “ponte” entre Model e View, coordenando o fluxo de dados e tarefas para satisfazer cada requisição do usuário.</p>
+
 
 <h2>Exemplo prático</h2>
 
@@ -104,4 +108,5 @@
 <h2>Considerações Finais</h2><p>O padrão MVC se firmou como uma abordagem eficiente para modelar aplicações Web mantendo o código organizado, flexível e testável.</p>
 <p>Entender como dados trafegam entre suas camadas (Model, View e Controller) é essencial para trabalhar com frameworks MVC populares atualmente.</p>
 <p>Portanto, ao adotar essa arquitetura, estamos aderindo a um padrão estabelecido que implementa boas práticas de desenvolvimento e nos permite construir softwares mais robustos e escaláveis.</p>
+
 
