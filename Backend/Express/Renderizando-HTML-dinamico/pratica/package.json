@@ -1,0 +1,15 @@
+{
+  "name": "pratica",
+  "version": "1.0.0",
+  "description": "Criar uma aplicação Node.js usando Express e EJS para cadastro e visualização de uma lista de e-mails de uma newsletter fictícia. A aplicação deve ter três páginas:\r Página inicial para cadastro na newsletter.\r Página de sucesso para a qual o usuário será redirecionado após se cadastrar.\r Página para visualizar a lista de todos os e-mails cadastrados.\r Ao preencher o formulário de inscrição o e-mail deverá ser salvo no backend em um array em memória e o usuário deverá ser redirecionado para a página de sucesso com uma mensagem indicando que seu e-mail foi cadastrado.\r Desafio Extra: Crie na página de visualização dos e-mails cadastrados um botão que permite excluir um e-mail da lista.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

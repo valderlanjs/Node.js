@@ -11,6 +11,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Configuração do body-parser
+// o que isso faz?
+
 app.use(express.urlencoded({ extended: true}))
 
 
