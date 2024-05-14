@@ -113,18 +113,26 @@ Por que essa operação:
 **Por isso que tem várias requisições sendo recebidas, quase que paralelamente, e vai processando de forma muito mais performática, com todo o gerenciamento sendo feito pelos componentes internos do Node.js.**
 
 
-## Alguns dos assuntos estudados no Node.js, nessa pasta
+## Alguns dos assuntos estudados no Node.js, neste repositório.
 
 * [Módulos no node.js](Introdução/modulos/)
+* [Módulos fs](Introdução/modulos/modulo_fs/)
 * [Lidando com caminhos usando "path"](Introdução/caminhos_path/)
-* [Informações SO](Introdução/informacoes_SO/)
-* [Streams e buffers](Introdução/Streams_e_buffers/)
+* [Informações SO (Operating System)](Introdução/informacoes_SO/)
+* [Streams e Buffers](Introdução/Streams_e_buffers/)
 * [Interação no terminal](Introdução/Interacao_no_terminal/)
-* [Praticas](Introdução/Praticas/)
+* [Praticas](Introdução/Praticas/) 
 * [Backend](Backend/)
-* [Verbos e status HTTP](Backend/verbos_e_statusHTTP/)
-* [Servidor HTTP](Backend/servidor_HTTP/)
-* [Arquitetura MVC](Backend/Arquitetura_MVC/)
-* [Express](Backend/Express/)
 * [Entrada e saida de dados](Backend/Entrada-e-saida-de-dados/)
+* [HTTP e ROTAS](Backend/HTTP-e-ROTAS/)
+* [HTTP](Backend/HTTP-e-ROTAS/HTTP/)
+* [Verbos e status HTTP](Backend/verbos_e_statusHTTP/)
+* [Rotas GET, POST, PUT e DELETE](Backend/HTTP-e-ROTAS/Rotas_GET_PUT_DELETE_POST/)
+* [Parâmetros de rotas](Backend/HTTP-e-ROTAS/Parametros_rotas/)
+* [Express](Backend/Express/)
+* [Retornando Arquivos Estáticos](Backend/Express/)
+* [Renderizando HTML Dinâmico](Backend/Express/)
+* [Arquitetura MVC](Backend/Arquitetura_MVC/)
+
+
 
